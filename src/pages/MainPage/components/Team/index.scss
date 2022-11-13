@@ -1,0 +1,27 @@
+@use "./src/theme/components";
+
+.team {
+  @include components.container;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 558px;
+  margin-top: 77px;
+  margin-bottom: 120px;
+
+  .page-header {
+    @include components.text-header;
+    margin-top: 83px;
+    z-index: 1;
+  }
+
+  .page-content {
+    @include components.text;
+    z-index: 1;
+  }
+
+  .team-bull {
+    position: absolute;
+    right: 0;
+  }
+}

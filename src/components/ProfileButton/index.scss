@@ -2,6 +2,7 @@
 
 .profile-button {
   position: relative;
+  z-index: 100;
 
   .round-button {
     padding: 6px 9px;
@@ -79,7 +80,7 @@
 
     .profile-dropdown {
       opacity: 1;
-      top: 65px;
+      top: 64px;
       animation: profile-dropdown-appear 0.2s ease-in-out;
 
       @media screen and (max-width: 1199px) {
@@ -104,24 +105,24 @@
 
 @keyframes profile-dropdown-appear {
   from {
-    top: 45px;
+    top: 44px;
     opacity: 0;
   }
 
   to {
-    top: 65px;
+    top: 64px;
     opacity: 1;
   }
 }
 
 @keyframes profile-dropdown-disappear {
   from {
-    top: 65px;
+    top: 64px;
     opacity: 1;
   }
 
   to {
-    top: 45px;
+    top: 44px;
     opacity: 0;
   }
 }

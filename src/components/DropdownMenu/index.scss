@@ -15,7 +15,7 @@
   border-bottom: 1px solid #6E748A;
   border-radius: 0 0 16px 16px;
   white-space: nowrap;
-  z-index: 110;
+  z-index: 200;
 
   div {
     @include components.text;
