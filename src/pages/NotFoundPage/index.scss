@@ -4,6 +4,7 @@
 .nf-page-container {
   @include components.container;
   margin-top: 145px;
+  min-height: calc(100vh - 273px);
 
   img.bull-image {
     position: absolute;
@@ -11,7 +12,6 @@
     top: 145px;
     width: 880px;
     height: 766.86px;
-    z-index: 0;
   }
 
   img.triangles {
@@ -57,16 +57,26 @@
   }
 
   @media screen and (max-width: 1199px) {
-    margin-top: 8px;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    position: relative;
-    padding: 32px 16px;
-    background: colors.$dark-grey;
-    border: 1px solid colors.$grey;
-    border-radius: 16px;
-    width: 432px;
+    margin: 8px;
+    min-height: calc(100vh - 180px);
+
+    .page-content-container {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      position: relative;
+      padding: 32px 16px;
+      margin: 0 auto;
+      background: colors.$dark-grey;
+      border: 1px solid colors.$grey;
+      border-radius: 16px;
+      width: 432px;
+
+      @media screen and (max-width: 482px) {
+        width: unset;
+        align-self: unset;
+      }
+    }
 
     img.triangles {
       width: 178px;
@@ -80,7 +90,7 @@
       }
     }
 
-    .header {
+    .page-header {
       display: flex;
       text-align: center;
       align-self: center;
@@ -98,10 +108,5 @@
       margin-top: 16px;
       z-index: 1;
     }
-  }
-
-  @media screen and (max-width: 500px) {
-    width: unset;
-    align-self: unset;
   }
 }
