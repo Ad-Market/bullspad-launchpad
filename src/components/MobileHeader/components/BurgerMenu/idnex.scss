@@ -1,0 +1,74 @@
+@use "../../../../theme/colors";
+@use "../../../../theme/components";
+
+.burger-menu {
+  position: fixed;
+  background: colors.$black;
+  top: 70px;
+  left: -16px;
+  right: 32px;
+  bottom: 0;
+  opacity: 0;
+  z-index: 50;
+  animation: burger-menu-disappear 0.2s ease-in-out;
+
+  &.visible {
+    left: 16px;
+    right: 16px;
+    opacity: 1;
+    animation: burger-menu-appear 0.2s ease-in-out;
+  }
+
+  .burger-menu-item {
+    @include components.text;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    margin: 0 !important;
+    border-bottom: 1px solid colors.$dark-grey-border;
+
+    .arrow-icon {
+      margin-top: 0;
+      width: 20px;
+      height: 20px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:nth-child(2) {
+      padding: 6px 0;
+    }
+  }
+}
+
+@keyframes burger-menu-appear {
+  from {
+    left: -16px;
+    right: 32px;
+    opacity: 0
+  }
+
+  to {
+    left: 16px;
+    right: 16px;
+    opacity: 1;
+  }
+}
+
+@keyframes burger-menu-disappear {
+  from {
+    left: 16px;
+    right: 16px;
+    opacity: 1;
+  }
+
+  to {
+    left: -16px;
+    right: 32px;
+    opacity: 0
+  }
+}

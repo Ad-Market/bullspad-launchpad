@@ -25,13 +25,13 @@
     margin: auto;
   }
 
-  .header {
+  .page-header {
     @include components.text-header;
     margin-top: 101px;
   }
 
   .description {
-    @include components.text-description;
+    @include components.text;
   }
 
   .button {

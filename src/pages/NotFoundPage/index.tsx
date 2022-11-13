@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { LEFT_LOOKING_BULL, NOT_FOUND_TRIANGLES } from "../../theme/sources"
 import Button from "../../components/Button"
 import useMobile from "../../hooks/useMobile"
-import { Footer } from '../../components'
+// import { Footer } from '../../components'
 
 const NotFoundPage = () => {
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const NotFoundPage = () => {
   return (
     <>
       <div className="nf-page-container">
-        <div className="header">
+        <div className="page-header">
           Sorry, page not found
         </div>
         <div className="description">

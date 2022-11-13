@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom"
 
-import { Footer } from "../index"
+import { Footer, Header, MobileHeader } from "../index"
+import useMobile from "../../hooks/useMobile"
 
 const RootLayout = () => {
+  const { mobile } = useMobile()
+
   return (
     <>
-      <div>
-        Header
-      </div>
+      {mobile ? <MobileHeader /> : <Header />}
       <main>
         <Outlet />
       </main>

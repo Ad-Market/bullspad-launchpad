@@ -1,0 +1,53 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.header {
+  position: absolute;
+  height: 88px;
+  top: 0;
+  left: 112px;
+  right: 112px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 48px;
+    width: fit-content;
+    background: colors.$black;
+    z-index: 10;
+
+    a {
+      margin-right: 32px;
+    }
+
+    .logo {
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .button:first-child {
+      margin-right: 32px;
+    }
+
+    &.wallet-disconnected {
+
+      .profile-button {
+        margin-right: 21px;
+      }
+    }
+  }
+}

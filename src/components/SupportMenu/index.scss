@@ -1,0 +1,152 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.support-btn {
+  @include components.text;
+  @include components.links;
+  position: relative;
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 63px;
+  cursor: pointer;
+  z-index: 10;
+
+  &:after {
+    bottom: 26px;
+  }
+
+  &:hover {
+
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+    transform: rotate(0);
+    transition: 0.2s;
+  }
+
+  .support-dropdown {
+    width: 122px;
+    right: -40px;
+    left: unset;
+    opacity: 0;
+    animation: support-dropdown-disappear 0.2s ease-in-out;
+  }
+
+  &.dropdown-visible {
+
+    .support-dropdown {
+      animation: support-dropdown-appear 0.2s ease-in-out;
+      opacity: 1;
+      top: 88px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+
+    &:hover {
+
+      .icon {
+        transform: rotate(0);
+      }
+    }
+
+    &:hover:after {
+      width: 0;
+    }
+
+    .support-dropdown {
+      width: unset;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      border-left: unset;
+      border-right: unset;
+      border-bottom: unset;
+      padding: 0;
+      animation: support-mobile-disappear 0.2s ease-in-out;
+
+      div {
+        padding: 8px 0 8px 24px;
+        margin: 0;
+      }
+
+      div:last-child {
+        padding: 8px 0 8px 24px;
+        border-bottom: 1px solid colors.$dark-grey-border;
+      }
+    }
+
+    &.dropdown-visible {
+
+      .support-dropdown {
+        animation: support-mobile-appear 0.2s ease-in-out;
+        opacity: 1;
+        top: 27px;
+      }
+
+      .icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+@keyframes support-dropdown-appear {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 88px;
+    opacity: 1;
+  }
+}
+
+@keyframes support-dropdown-disappear {
+  from {
+    top: 88px;
+    opacity: 1;
+  }
+
+  to {
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes support-mobile-appear {
+  from {
+    top: 12px;
+    opacity: 0;
+  }
+
+  to {
+    top: 27px;
+    opacity: 1;
+  }
+}
+
+@keyframes support-mobile-disappear {
+  from {
+    top: 27px;
+    opacity: 1;
+  }
+
+  to {
+    top: 12px;
+    opacity: 0;
+  }
+}
