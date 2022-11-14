@@ -5,14 +5,22 @@ import { classNames } from "@knownout/lib"
 
 import { BULLSPAD_LOGO } from "../../theme/sources"
 import { Button, ProfileButton, SearchBar, SupportMenu } from "../index"
+import useHeaderFixed from "../../hooks/useHeaderFixed"
 
 const Header = () => {
   const [loggedIn, isLoggedIn] = useState(true)
   const [walletConnected, setWalletConnected] = useState(false)
+  const { scrollUp, animationOn } = useHeaderFixed()
 
 
   return (
-    <div className="header">
+    <div
+      className={classNames(
+        "header",
+        scrollUp && "fixed",
+        animationOn && "animated"
+      )}
+    >
       <div
         className="left">
         <NavLink to={"/"}>

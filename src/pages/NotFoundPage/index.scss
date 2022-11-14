@@ -2,9 +2,8 @@
 @use "../../theme/colors";
 
 .nf-page-container {
-  @include components.container;
-  margin-top: 145px;
-  min-height: calc(100vh - 273px);
+  margin: 145px 0 0 112px;
+  min-height: calc(100vh - 290px);
 
   img.bull-image {
     position: absolute;

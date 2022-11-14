@@ -2,30 +2,34 @@
 @use "./src/theme/components";
 
 .instructions {
-  padding: 64px 112px;
+  padding: 64px;
   background: colors.$blue;
 
-  .instructions-header {
-    @include components.text-header;
-  }
+  .content-container {
+    @include components.container;
 
-  .instructions-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    .instructions-header {
+      @include components.text-header;
+    }
 
-    .item {
+    .instructions-content {
       display: flex;
-      max-width: 384px;
+      justify-content: space-between;
+      margin-top: 40px;
 
-      .number {
-        @include components.text-header;
-        margin-right: 31px;
-      }
+      .item {
+        display: flex;
+        max-width: 384px;
 
-      .text {
-        @include components.text-instructions;
-        margin-top: 14px;
+        .number {
+          @include components.text-header;
+          margin-right: 31px;
+        }
+
+        .text {
+          @include components.text-instructions;
+          margin-top: 14px;
+        }
       }
     }
   }

@@ -45,7 +45,8 @@
 }
 
 @mixin container {
-  margin: 0 112px;
+  margin: 0 auto;
+  max-width: 1216px;
 
   @media screen and (max-width: 1199px) {
     margin: 0 16px;

@@ -2,7 +2,7 @@
 @use "./src/theme/components";
 
 .header {
-  position: fixed;
+  position: absolute;
   height: 88px;
   top: 0;
   left: 0;
@@ -14,6 +14,15 @@
   background: colors.$black;
   z-index: 10;
   padding: 0 112px;
+
+  &.fixed {
+    position: fixed;
+    animation: header-appear 0.2s ease-in-out;
+  }
+
+  &.animated {
+    animation: header-disappear 0.2s ease-in-out;
+  }
 
   .left {
     position: relative;
@@ -52,5 +61,25 @@
         margin-right: 21px;
       }
     }
+  }
+}
+
+@keyframes header-appear {
+  from {
+    top: -88px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes header-disappear {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -88px;
   }
 }
