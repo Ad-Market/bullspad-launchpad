@@ -1,0 +1,36 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.instructions {
+  padding: 64px;
+  background: colors.$blue;
+
+  .content-container {
+    @include components.container;
+
+    .instructions-header {
+      @include components.text-header;
+    }
+
+    .instructions-content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+
+      .item {
+        display: flex;
+        max-width: 384px;
+
+        .number {
+          @include components.text-header;
+          margin-right: 31px;
+        }
+
+        .text {
+          @include components.text-instructions;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@use "./src/theme/colors";
+
+.profile-button {
+  position: relative;
+  z-index: 100;
+
+  .round-button {
+    padding: 6px 9px;
+    background: colors.$black;
+    border: 1px solid colors.$green;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      box-shadow: 4px 4px colors.$blue;
+    }
+
+    &:active {
+      box-shadow: 4px 4px colors.$blue;
+
+      .icon {
+
+        svg {
+
+          path {
+            transition: 0.2s;
+            stroke: colors.$grey;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1199px) {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+
+      .profile-icon {
+        margin-top: 2px;
+        width: 11px;
+        height: 13px;
+
+        svg {
+          width: 11px;
+          height: 13px;
+
+          path {
+            stroke: colors.$white;
+          }
+        }
+      }
+
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      &:active {
+        box-shadow: 2px 2px colors.$blue;
+      }
+    }
+  }
+
+  .profile-dropdown {
+    left: unset;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    animation: profile-dropdown-disappear 0.2s ease-in-out;
+
+    @media screen and (max-width: 1199px) {
+      animation: profile-mobile-disappear 0.2s ease-in-out;
+    }
+  }
+
+  &.profile-dropdown-visible {
+
+    .profile-dropdown {
+      opacity: 1;
+      top: 64px;
+      animation: profile-dropdown-appear 0.2s ease-in-out;
+
+      @media screen and (max-width: 1199px) {
+        top: 34px;
+        animation: profile-mobile-appear 0.2s ease-in-out;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+
+    .profile-dropdown {
+      right: unset;
+      left: 0;
+
+      div {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@keyframes profile-dropdown-appear {
+  from {
+    top: 44px;
+    opacity: 0;
+  }
+
+  to {
+    top: 64px;
+    opacity: 1;
+  }
+}
+
+@keyframes profile-dropdown-disappear {
+  from {
+    top: 64px;
+    opacity: 1;
+  }
+
+  to {
+    top: 44px;
+    opacity: 0;
+  }
+}
+
+@keyframes profile-mobile-appear {
+  from {
+    top: 24px;
+    opacity: 0;
+  }
+
+  to {
+    top: 34px;
+    opacity: 1;
+  }
+}
+
+@keyframes profile-mobile-disappear {
+  from {
+    top: 34px;
+    opacity: 1;
+  }
+
+  to {
+    top: 24px;
+    opacity: 0;
+  }
+}

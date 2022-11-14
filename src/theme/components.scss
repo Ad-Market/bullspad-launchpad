@@ -1,5 +1,21 @@
 @use "./colors";
 
+@mixin text {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 22px;
+  color: colors.$white;
+  margin-top: 24px;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+}
+
 @mixin text-header {
   font-family: "Krona One", sans-serif;
   font-style: normal;
@@ -14,24 +30,23 @@
   }
 }
 
-@mixin text-description {
+@mixin text-instructions {
   font-family: "Manrope", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 27px;
   color: colors.$white;
-  margin-top: 24px;
 
   @media screen and (max-width: 1199px) {
     font-size: 12px;
     line-height: 16px;
-    margin-top: 8px;
   }
 }
 
 @mixin container {
-  margin: 0 112px;
+  margin: 0 auto;
+  max-width: 1216px;
 
   @media screen and (max-width: 1199px) {
     margin: 0 16px;
@@ -53,10 +68,11 @@
 }
 
 @mixin links {
-  a:after {
+  &:after {
     display: block;
     position: absolute;
     left: 0;
+    bottom: -6px;
     width: 0;
     height: 2px;
     border-radius: 2px;
@@ -65,7 +81,18 @@
     transition: width 0.3s ease-out;
   }
 
-  a:hover:after {
+  &:hover:after {
     width: 100%;
   }
+}
+
+@mixin backdrop {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
 }

@@ -19,7 +19,6 @@
     ],
 
     "max-len": ["warn", 120],
-    "comma-dangle": ["warn", "never"],
     // "no-unused-vars": "warn",
     "no-console": "warn",
     "semi": ["warn", "never"],

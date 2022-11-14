@@ -1,0 +1,9 @@
+@use "./src/theme/components";
+
+.main-page-container {
+  margin-top: 88px;
+
+  @media screen and (max-width: 1199px) {
+    margin-top: 76px;
+  }
+}

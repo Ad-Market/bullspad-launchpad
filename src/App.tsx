@@ -3,14 +3,15 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import NotFoundPage from "./pages/NotFoundPage"
 import { RootLayout } from "./components"
+import MainPage from "./pages/MainPage"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<div>Main Page</div>} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route index element={<MainPage />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </>
   )
 )

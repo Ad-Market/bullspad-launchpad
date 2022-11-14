@@ -1,0 +1,23 @@
+@use "./src/theme/colors";
+
+.mobile-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: colors.$black;
+  padding: 8px 0;
+  top: 36px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    button:first-of-type {
+      margin-right: 8px;
+    }
+  }
+}
