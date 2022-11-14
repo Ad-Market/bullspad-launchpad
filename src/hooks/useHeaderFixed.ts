@@ -9,8 +9,9 @@ export default function useHeaderFixed() {
 
     const onScroll = () => {
       setScrollPosition(window.scrollY)
+      const headerHeight = document.querySelector(".header")?.clientHeight as Number
 
-      if (window.scrollY < 88) {
+      if (window.scrollY < headerHeight) {
         if (scrollUp && window.scrollY === 0) {
           setScrollUp(false)
         }
@@ -33,7 +34,10 @@ export default function useHeaderFixed() {
     return () => {
       window.removeEventListener("scroll", onScroll)
     }
-  }, [scrollPosition])
+  }, [
+    scrollPosition,
+    scrollUp
+  ])
 
   return {
     scrollUp,
