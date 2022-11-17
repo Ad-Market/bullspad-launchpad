@@ -1,4 +1,6 @@
+import { createPortal } from "react-dom"
 import "./idnex.scss"
+
 import { SupportMenu } from "../../../index"
 
 interface BurgerMenuProps {
@@ -6,7 +8,9 @@ interface BurgerMenuProps {
 }
 
 const BurgerMenu = ({ className }: BurgerMenuProps) => {
-  return (
+  const rootElement = document.getElementById("root") as Element | DocumentFragment
+
+  return createPortal(
     <div className={"burger-menu " + className}>
       <div className="burger-menu-item">
         Projects
@@ -14,7 +18,8 @@ const BurgerMenu = ({ className }: BurgerMenuProps) => {
       <div className="burger-menu-item">
         <SupportMenu />
       </div>
-    </div>
+    </div>,
+    rootElement
   )
 }
 

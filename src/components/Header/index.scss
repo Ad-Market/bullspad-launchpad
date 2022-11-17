@@ -12,8 +12,8 @@
   flex-direction: row;
   justify-content: space-between;
   background: colors.$black;
-  z-index: 10;
   padding: 0 112px;
+  z-index: 10;
 
   &.fixed {
     position: fixed;
@@ -31,7 +31,6 @@
     padding-right: 48px;
     width: fit-content;
     background: colors.$black;
-    z-index: 10;
 
     a {
       margin-right: 32px;

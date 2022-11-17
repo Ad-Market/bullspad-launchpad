@@ -4,19 +4,19 @@
 .burger-menu {
   position: fixed;
   background: colors.$black;
-  top: 70px;
-  left: -16px;
-  right: 32px;
-  bottom: 0;
-  opacity: 0;
-  z-index: 10;
-  animation: burger-menu-disappear 0.2s ease-in-out;
+  height: 100vh;
+  padding: 0 16px;
+  top: -600px;
+  left: 0;
+  right: 0;
+  bottom: -600px;
+  z-index: 1;
+  animation: burger-menu-disappear 0.4s ease-in-out;
 
   &.visible {
-    left: 16px;
-    right: 16px;
-    opacity: 1;
-    animation: burger-menu-appear 0.2s ease-in-out;
+    top: 70px;
+    bottom: 0;
+    animation: burger-menu-appear 0.4s ease-in-out;
   }
 
   .burger-menu-item {
@@ -47,28 +47,24 @@
 
 @keyframes burger-menu-appear {
   from {
-    left: -16px;
-    right: 32px;
-    opacity: 0
+    top: -600px;
+    bottom: -600px;
   }
 
   to {
-    left: 16px;
-    right: 16px;
-    opacity: 1;
+    top: 70px;
+    bottom: 0;
   }
 }
 
 @keyframes burger-menu-disappear {
   from {
-    left: 16px;
-    right: 16px;
-    opacity: 1;
+    top: 70px;
+    bottom: 0;
   }
 
   to {
-    left: -16px;
-    right: 32px;
-    opacity: 0
+    top: -600px;
+    bottom: -600px;
   }
 }
