@@ -10,7 +10,7 @@ const ProfileButton = () => {
     elementAppear,
     elementVisible,
     elementCallHandler,
-  } = useAnimation()
+  } = useAnimation({ duration: 200 })
 
   return (
     <>

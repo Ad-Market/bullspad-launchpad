@@ -1,0 +1,47 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.status-filter {
+  @include components.text-subheader;
+  display: flex;
+  flex-direction: column;
+
+  .actions {
+    display: flex;
+    margin-top: 10px;
+
+    .button {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+
+      .status-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        margin-left: 8px;
+
+        &.green {
+          background: colors.$green;
+        }
+
+        &.blue {
+          background: colors.$blue;
+        }
+      }
+    }
+
+    .button:last-of-type {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 1199px) {
+      margin-top: 8px;
+      overflow: auto;
+
+      .button {
+        margin-right: 8px;
+      }
+    }
+  }
+}

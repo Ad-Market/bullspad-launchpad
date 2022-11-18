@@ -13,7 +13,7 @@ const SupportMenu = () => {
     elementCallHandler,
     elementAppearHandler,
     elementDisappearHandler
-  } = useAnimation()
+  } = useAnimation( { duration: 200 })
   const { mobile } = useMobile()
 
   const dropdownMenuItems = ["FAQ", "Documents", "Support service"]

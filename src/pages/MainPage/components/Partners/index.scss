@@ -15,19 +15,18 @@
     margin-top: 24px;
 
     .partners-card {
+      @include components.card;
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 462px;
       padding: 40px 64px;
-      border: 1px solid #7281BC;
-      border-radius: 16px;
-      background-color: colors.$dark-grey;
     }
   }
 
   @media screen and (max-width: 1199px) {
     margin-bottom: 22px;
+    max-width: 370px;
 
     .partners-header {
       font-weight: 400;

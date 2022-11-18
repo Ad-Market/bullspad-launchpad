@@ -1,5 +1,8 @@
 import { useState } from "react"
 
+interface UseAnimationProps {
+  duration: number
+}
 
 export interface IUseAnimation {
   elementAppearHandler: () => void
@@ -8,7 +11,7 @@ export interface IUseAnimation {
   elementVisible: boolean
   elementAppear: boolean
 }
-export default function useAnimation(): IUseAnimation  {
+export default function useAnimation({ duration }: UseAnimationProps): IUseAnimation  {
   const [elementVisible, setElementVisible] = useState(false)
   const [elementAppear, setElementAppear] = useState(false)
 
@@ -20,7 +23,7 @@ export default function useAnimation(): IUseAnimation  {
       setElementAppear(false)
       setTimeout(() => {
         setElementVisible(false)
-      }, 200)
+      }, duration)
     }
   }
 
@@ -34,7 +37,7 @@ export default function useAnimation(): IUseAnimation  {
 
     setTimeout(() => {
       setElementVisible(false)
-    }, 200)
+    }, duration)
   }
 
   return {

@@ -2,14 +2,15 @@ import "./index.scss"
 import {
   Instructions,
   Introduction,
-  Partners,
-  Team
+  Partners, Projects,
+  Team,
 } from "./components"
 
 const MainPage = () => {
   return (
     <div className="main-page-container">
       <Introduction />
+      <Projects />
       <Instructions />
       <Team />
       <Partners />

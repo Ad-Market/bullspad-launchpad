@@ -17,7 +17,7 @@ const SearchBar = () => {
     elementVisible,
     elementAppearHandler,
     elementDisappearHandler
-  } = useAnimation()
+  } = useAnimation({ duration: 200 })
 
   const dummyProjects = [
     "Zombo Ducks",

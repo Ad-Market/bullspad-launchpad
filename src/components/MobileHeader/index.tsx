@@ -4,14 +4,14 @@ import { NavLink } from "react-router-dom"
 import "./index.scss"
 import { Button, ProfileButton } from "../index"
 import { BULLSPAD_LOGO } from "../../theme/sources"
+import useAnimation from "../../hooks/useAnimation"
 
 import BurgerMenu from "./components/BurgerMenu"
 import BurgerMenuButton from "./components/BurgerMenuButton"
-import useAnimation from "../../hooks/useAnimation"
 
 const MobileHeader = () => {
   const [loggedIn, isLoggedIn] = useState(true)
-  const { elementAppear, elementVisible, elementCallHandler } = useAnimation()
+  const { elementAppear, elementVisible, elementCallHandler } = useAnimation({ duration: 400 })
 
   return (
     <>
