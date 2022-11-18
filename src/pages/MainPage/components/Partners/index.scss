@@ -1,0 +1,57 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.partners {
+  @include components.container;
+  margin-bottom: 101px;
+
+  .partners-header {
+    @include components.text-header;
+  }
+
+  .partners-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    .partners-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 462px;
+      padding: 40px 64px;
+      border: 1px solid #7281BC;
+      border-radius: 16px;
+      background-color: colors.$dark-grey;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 22px;
+
+    .partners-header {
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .partners-cards {
+      flex-direction: column;
+      margin-top: 16px;
+      width: 100%;
+
+      .partners-card {
+        width: unset;
+        flex-direction: column;
+        padding: 24px 32px;
+
+        img {
+          margin-bottom: 12px;
+        }
+
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

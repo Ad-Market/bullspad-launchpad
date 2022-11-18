@@ -24,4 +24,26 @@
     position: absolute;
     right: 0;
   }
+
+  @media screen and (max-width: 1199px) {
+    min-height: unset;
+    margin: 32px 16px;
+
+    .page-header {
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    .page-content {
+      @include components.text;
+      margin-top: 229px !important;
+    }
+
+    .team-bull {
+      position: absolute;
+      top: 26px;
+      right: 0;
+    }
+  }
 }

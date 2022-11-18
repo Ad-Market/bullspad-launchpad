@@ -1,5 +1,10 @@
 import "./index.scss"
-import { Instructions, Introduction, Team } from "./components"
+import {
+  Instructions,
+  Introduction,
+  Partners,
+  Team
+} from "./components"
 
 const MainPage = () => {
   return (
@@ -7,6 +12,7 @@ const MainPage = () => {
       <Introduction />
       <Instructions />
       <Team />
+      <Partners />
     </div>
   )
 }
