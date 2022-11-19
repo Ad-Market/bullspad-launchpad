@@ -17,6 +17,7 @@
   .page-content {
     display: flex;
     flex-direction: column;
+    margin-top: 24px;
 
     .text {
       @include components.text;
@@ -42,7 +43,8 @@
   }
 
   @media screen and (max-width: 1199px) {
-    margin: 0 16px 32px 16px;
+    margin-bottom: 32px;
+    max-width: 370px;
 
     .search-bar-container {
       margin-top: 8px;
@@ -62,6 +64,7 @@
 
       .text {
         @include components.text;
+        margin-top: 8px;
       }
 
       .actions {

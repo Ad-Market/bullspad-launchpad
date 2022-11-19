@@ -2,13 +2,15 @@
 @use "../../theme/colors";
 
 .nf-page-container {
-  margin: 145px 0 0 112px;
+  margin: 145px auto 0 auto;
+  width: 1216px;
   min-height: calc(100vh - 290px);
+  position: relative;
 
   img.bull-image {
     position: absolute;
-    right: -310px;
-    top: 145px;
+    right: -410px;
+    top: 0;
     width: 880px;
     height: 766.86px;
   }
@@ -31,6 +33,7 @@
 
   .description {
     @include components.text;
+    margin-top: 24px;
   }
 
   .button {
@@ -58,17 +61,16 @@
   @media screen and (max-width: 1199px) {
     margin: 8px;
     min-height: calc(100vh - 184px);
+    width: unset;
 
     .page-content-container {
+      @include components.card;
       display: flex;
       align-self: center;
       flex-direction: column;
       position: relative;
       padding: 32px 16px;
       margin: 0 auto;
-      background: colors.$dark-grey;
-      border: 1px solid colors.$grey;
-      border-radius: 16px;
       width: 432px;
 
       @media screen and (max-width: 482px) {

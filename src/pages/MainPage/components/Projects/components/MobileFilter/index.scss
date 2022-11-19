@@ -1,0 +1,13 @@
+@use "./src/theme/components";
+
+.mobile-filter {
+  position: absolute;
+  top: 4px;
+  right: 0;
+
+  .button {
+    display: flex;
+    align-items: center;
+    @include components.text;
+  }
+}

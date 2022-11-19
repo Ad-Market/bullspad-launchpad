@@ -18,6 +18,7 @@
   .page-content {
     @include components.text;
     z-index: 1;
+    margin-top: 24px;
   }
 
   .team-bull {
@@ -27,7 +28,8 @@
 
   @media screen and (max-width: 1199px) {
     min-height: unset;
-    margin: 32px 16px;
+    margin-bottom: 32px;
+    max-width: 370px;
 
     .page-header {
       font-weight: 400;

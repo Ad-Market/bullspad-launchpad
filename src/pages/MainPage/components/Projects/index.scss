@@ -1,0 +1,102 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.projects-section {
+  @include components.container;
+  margin-bottom: 160px;
+  position: relative;
+
+  .section-header{
+    @include components.text-header;
+  }
+
+  .status-filter {
+    margin-top: 24px;
+  }
+
+  .swiper {
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+
+  .prevElBtn {
+    position: absolute;
+    display: none;
+    left: -24px;
+    top: 210px;
+
+    .icon {
+      transform: rotate(225deg);
+    }
+
+    &.visible {
+      display: flex;
+    }
+  }
+
+  .nextElBtn {
+    display: none;
+    position: absolute;
+    right: -24px;
+    top: 210px;
+
+    &.visible {
+      display: flex;
+    }
+  }
+
+  .button.green {
+    margin-top: 46px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 370px;
+    margin-bottom: 32px;
+
+    .section-header{
+      font-weight: 400;
+      font-size: 16px;
+      height: 22px;
+      overflow: hidden;
+      transition: 0.4s ease-in-out;
+
+      &.visible {
+        height: 88px;
+      }
+    }
+
+    .status-filter {
+      margin-top: 8px;
+    }
+
+    .swiper {
+      width: 288px;
+      margin: 0 auto;
+    }
+
+    .swiper-wrapper {
+      margin-top: 16px;
+    }
+
+    .button.green {
+      display: flex;
+      width: fit-content;
+      margin: 16px auto 0 auto;
+    }
+
+    .prevElBtn {
+      left: -8px;
+      top: 150px;
+    }
+
+    .nextElBtn {
+      right: -8px;
+      top: 150px;
+    }
+  }
+}
