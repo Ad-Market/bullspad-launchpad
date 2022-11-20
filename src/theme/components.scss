@@ -131,3 +131,53 @@
   border-radius: 16px;
   background-color: colors.$dark-grey;
 }
+
+@mixin navigation-bar {
+  @include text;
+  display: flex;
+  align-items: center;
+
+  .previous-pages {
+    cursor: pointer;
+    color: colors.$grey;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 8px;
+    transform: rotate(45deg);
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .icon {
+      width: 16px;
+      height: 16px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+@mixin timeline-indicator {
+  position: absolute;
+  top: -5.5px;
+  width: 8px;
+  height: 13px;
+  border: 1px solid colors.$white;
+  border-radius: 112px;
+  background: colors.$blue;
+
+  @media screen and (max-width: 1199px) {
+    height: 15px;
+    top: -5px;
+  }
+}

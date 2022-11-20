@@ -10,14 +10,17 @@ import BurgerMenu from "./components/BurgerMenu"
 import BurgerMenuButton from "./components/BurgerMenuButton"
 
 const MobileHeader = () => {
-  const [loggedIn, isLoggedIn] = useState(true)
+  const [loggedIn, isLoggedIn] = useState(false)
   const { elementAppear, elementVisible, elementCallHandler } = useAnimation({ duration: 400 })
 
   return (
     <>
       <div className="mobile-header">
         <div className="right">
-          <BurgerMenuButton onClick={elementCallHandler} />
+          <BurgerMenuButton
+            onClick={elementCallHandler}
+            checked={elementAppear}
+          />
           {loggedIn ? (
             <ProfileButton />
           ) : (
@@ -48,7 +51,12 @@ const MobileHeader = () => {
             height="12px"
           />
         </NavLink>
-        {elementVisible && <BurgerMenu className={elementAppear ? "visible" : null}/>}
+        {elementVisible && (
+          <BurgerMenu
+            className={elementAppear ? "visible" : null}
+            onMenuCall={elementCallHandler}
+          />
+        )}
       </div>
     </>
   )

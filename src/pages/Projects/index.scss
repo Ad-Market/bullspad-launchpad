@@ -6,26 +6,7 @@
   margin: 120px auto 130px auto;
 
   .navigation-bar {
-    @include components.text;
-    display: flex;
-    align-items: center;
-
-    .previous-pages {
-      cursor: pointer;
-      color: colors.$grey;
-    }
-
-    .icon {
-      width: 20px;
-      height: 20px;
-      margin: 0 8px;
-      transform: rotate(45deg);
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
+    @include components.navigation-bar;
   }
 
   .title {
@@ -50,19 +31,6 @@
     max-width: 370px;
     margin-top: 82px;
 
-    .navigation-bar {
-
-      .icon {
-        width: 16px;
-        height: 16px;
-
-        svg {
-          width: 16px;
-          height: 16px;
-        }
-      }
-    }
-
     .title {
       position: relative;
       margin-top: 16px;
@@ -86,7 +54,7 @@
       grid: auto / auto;
       grid-row-gap: 16px;
       grid-column-gap: unset;
-      margin: 16px auto 0 auto;
+      margin: 16px auto 40px auto;
       width: fit-content;
     }
   }

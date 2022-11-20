@@ -11,6 +11,7 @@ import ProjectCard from "./ProjectCard"
 import RootLayout from "./RootLayout"
 import SearchBar from "./SearchBar"
 import StatusFilter from "./StatusFilter"
+import StatusIndicator from "./StatusIndicator"
 import SupportMenu from "./SupportMenu"
 
 export {
@@ -27,5 +28,6 @@ export {
   ProjectCard,
   SearchBar,
   StatusFilter,
+  StatusIndicator,
   SupportMenu
 }

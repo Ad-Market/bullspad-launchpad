@@ -2,9 +2,10 @@ import "./index.scss"
 
 interface BurgerMenuButtonProps {
   onClick: () => void
+  checked: boolean
 }
 
-const BurgerMenuButton = ({ onClick }: BurgerMenuButtonProps) => {
+const BurgerMenuButton = ({ onClick, checked }: BurgerMenuButtonProps) => {
   return (
     <div
       className="menu-icon"
@@ -14,6 +15,7 @@ const BurgerMenuButton = ({ onClick }: BurgerMenuButtonProps) => {
         id="checkbox"
         className="menu-icon__cheeckbox"
         type="checkbox"
+        checked={checked}
       />
       <div>
         <span></span>
