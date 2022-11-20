@@ -1,5 +1,5 @@
-@use "./src/theme/colors";
-@use "./src/theme/components";
+@use "../../theme/colors";
+@use "../../theme/components";
 
 .status-filter {
   @include components.text-subheader;

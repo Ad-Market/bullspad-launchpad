@@ -8,7 +8,7 @@ import { Button, ProfileButton, SearchBar, SupportMenu } from "../index"
 import useHeaderFixed from "../../hooks/useHeaderFixed"
 
 const Header = () => {
-  const [loggedIn, isLoggedIn] = useState(true)
+  const [loggedIn, isLoggedIn] = useState(false)
   const [walletConnected, setWalletConnected] = useState(false)
   const { scrollUp, animationOn } = useHeaderFixed()
 
