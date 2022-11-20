@@ -1,5 +1,4 @@
 import "./index.scss"
-import FilterButton from "../FilterButton"
 
 interface MobileFilterProps {
   onClick: () => void
@@ -14,7 +13,21 @@ const MobileFilter = ({ onClick, checked }: MobileFilterProps) => {
     >
       <div className="button">
         Filter
-        <FilterButton checked={checked} />
+        <div
+          className="filter-button"
+        >
+          <input
+            id="checkbox"
+            className="filter-button__cheeckbox"
+            type="checkbox"
+            checked={checked}
+          />
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
     </div>
   )

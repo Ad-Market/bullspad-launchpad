@@ -40,7 +40,7 @@ const ProjectCard = ({
         className="banner"
       />
       <div className="card-content">
-        <div className="title">
+        <div className="card-title">
           <img
             src={logoURL}
             alt=""

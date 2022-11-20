@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom"
 import "./index.scss"
+
 import { Button, SearchBar } from "../../../../components"
 import { INTRODUCTION_BULL, INTRODUCTION_BULL_MOBILE } from "../../../../theme/sources"
 import useMobile from "../../../../hooks/useMobile"
 
 const Introduction = () => {
+  const navigate = useNavigate()
   const { mobile } = useMobile()
 
   return (
@@ -21,7 +24,7 @@ const Introduction = () => {
           <Button
             size="large"
             color="green"
-            onClick={() => {}}
+            onClick={() => navigate("/projects")}
           >
             Become an investor
           </Button>

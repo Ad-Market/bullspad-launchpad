@@ -1,19 +1,26 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper"
 import { classNames } from "@knownout/lib"
 
 import "./index.scss"
-import { Button, NavigationButton, ProjectCard } from "../../../../components"
+import {
+  Button,
+  MobileFilter,
+  NavigationButton,
+  ProjectCard,
+  StatusFilter
+} from "../../../../components"
 import { DUMMY_PROJECTS } from "../../../../theme/sources"
 import useMobile from "../../../../hooks/useMobile"
 
-import { MobileFilter, StatusFilter } from "./components"
 
 const Projects = () => {
   const [prevBtnVisible, setPrevBtnVisible] = useState(false)
   const [nextBtnVisible, setNextBtnVisible] = useState(true)
   const [filterVisible, setFilterVisible] = useState(false)
+  const navigate = useNavigate()
   const { mobile } = useMobile()
 
   return (
@@ -98,7 +105,7 @@ const Projects = () => {
       <Button
         size="large"
         color="green"
-        onClick={() => {}}
+        onClick={() => navigate("/projects")}
       >
         Discover all projects
       </Button>

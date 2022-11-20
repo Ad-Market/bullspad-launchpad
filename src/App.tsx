@@ -1,15 +1,20 @@
 import "./App.scss"
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from "react-router-dom"
 
-import NotFoundPage from "./pages/NotFoundPage"
 import { RootLayout } from "./components"
-import MainPage from "./pages/MainPage"
+import { MainPage, NotFoundPage, Projects } from "./pages"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<MainPage />} />
+        <Route path="/projects" element={<Projects />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </>

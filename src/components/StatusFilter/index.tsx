@@ -1,7 +1,7 @@
 import "./index.scss"
-import { Button } from "../../../../../../components"
-import useStatusFilter, { StatusFilterType } from "../../../../../../hooks/useStatusFilter"
-import useMobile from "../../../../../../hooks/useMobile"
+import { Button } from "../index"
+import useStatusFilter, { StatusFilterType } from "../../hooks/useStatusFilter"
+import useMobile from "../../hooks/useMobile"
 
 const StatusFilter = () => {
   const { mobile } = useMobile()
