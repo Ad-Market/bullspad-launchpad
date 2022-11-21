@@ -3,6 +3,7 @@
 
 .card {
   @include components.card;
+  cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,35 +12,6 @@
 
   &:hover {
     transform: scale(1.04);
-  }
-
-  .status {
-    @include components.text;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top:-16px;
-    right: -16px;
-    padding: 7px 24px;
-    background: colors.$black;
-    border: 1px solid #FBFBFF;
-    border-radius: 32px;
-
-    .indicator {
-      width: 8px;
-      height: 8px;
-      border-radius: 100px;
-      margin-left: 8px;
-
-      &.open {
-        background: colors.$green;
-      }
-
-      &.upcoming {
-        background: colors.$blue;
-      }
-    }
   }
 
   .banner {

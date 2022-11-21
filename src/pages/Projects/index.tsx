@@ -1,12 +1,12 @@
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { classNames } from "@knownout/lib"
 import "./index.scss"
 
 import { ArrowIcon } from "../../components/Icon"
 import { DUMMY_PROJECTS } from "../../theme/sources"
 import { MobileFilter, ProjectCard, StatusFilter } from "../../components"
 import useMobile from "../../hooks/useMobile"
-import { useState } from "react"
-import { classNames } from "@knownout/lib"
 
 const Index = () => {
   const [filterVisible, setFilterVisible] = useState(false)

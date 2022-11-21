@@ -7,7 +7,12 @@ import {
 } from "react-router-dom"
 
 import { RootLayout } from "./components"
-import { MainPage, NotFoundPage, Projects } from "./pages"
+import {
+  MainPage,
+  NotFoundPage,
+  ProjectPage,
+  Projects
+} from "./pages"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<MainPage />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:projectId" element={<ProjectPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </>

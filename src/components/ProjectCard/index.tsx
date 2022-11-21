@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom"
 import "./index.scss"
-import { classNames } from "@knownout/lib"
+
+import { StatusIndicator } from "../index"
 
 interface ProjectCardProps {
   bannerURL: string
@@ -20,20 +22,15 @@ const ProjectCard = ({
   allocation,
   status,
 }: ProjectCardProps) => {
+  const navigate = useNavigate()
+  const projectLink = title.toLowerCase().replace(/\s/g,"_")
+
   return (
-    <div className="card">
-      <div className="status">
-        {status}
-        {status !== "Ended" && (
-          <div
-            className={classNames(
-              "indicator",
-              status === "Open" && "open",
-              status === "Upcoming" && "upcoming",
-            )}
-          />
-        )}
-      </div>
+    <div
+      className="card"
+      onClick={() => navigate(`/projects/${projectLink}`)}
+    >
+      <StatusIndicator status={status} />
       <img
         src={bannerURL}
         alt=""

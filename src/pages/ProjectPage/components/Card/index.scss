@@ -1,0 +1,159 @@
+@use "./src/theme/colors";
+@use "./src/theme/components";
+
+.card-container {
+  @include components.card;
+  position: relative;
+
+  .status {
+    top: 16px;
+    left: 16px;
+    right: unset;
+  }
+
+  .project-banner {
+    width: 592px;
+    height: 216px;
+  }
+
+  .card-content {
+    padding: 16px 80px 32px;
+
+    .content-header {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      .project-logo {
+        position: absolute;
+        top: 168px;
+        left: 80px;
+        width: 95px;
+        height: 95px;
+        border: 1px solid #7281BC;
+        border-radius: 100px;
+      }
+
+      .sale-end {
+        @include components.text-subheader;
+        display: flex;
+        color: colors.$green;
+      }
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 22px;
+      margin-top: 32px;
+      border: 1px solid #414860;
+      border-radius: 112px;
+      background: colors.$black;
+
+      .progress {
+        width: 40%;
+        height: 22px;
+        background: colors.$blue;
+        border: 1px solid #7281BC;
+        border-radius: 112px;
+      }
+    }
+
+    .progress-description {
+      @include components.text;
+      margin-top: 16px;
+    }
+
+    .subheader {
+      @include components.text-subheader;
+      margin: 24px 0 8px;
+    }
+
+    .amount {
+      @include components.text-header;
+      font-size: 24px;
+    }
+
+    .token-rate {
+      @include components.text;
+      margin-top: 24px;
+    }
+
+    .button {
+      width: 100%;
+      margin-top: 32px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    background: transparent;
+    border: unset;
+
+    .status {
+      top: 4px;
+      right: 4px;
+      left: unset;
+      padding: 4px 16px;
+    }
+
+    .project-banner {
+      width: 370px;
+      height: 106px;
+      border-radius: 16px;
+
+      @media screen and (max-width: 402px) {
+        width: 288px;
+        height: 106px;
+        display: flex;
+        margin: 0 auto;
+      }
+    }
+
+    .card-content {
+      padding: 0;
+
+      .content-header {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        .project-logo {
+          top: 82px;
+          left: 16px;
+          width: 48px;
+          height: 48px;
+        }
+
+        .sale-end {
+          margin-top: 32px;
+        }
+      }
+
+      .progress-bar {
+        height: 8px;
+        margin-top: 8px;
+
+        .progress {
+          height: 8px;
+        }
+      }
+
+      .progress-description {
+        margin: 4px 0 17px;
+      }
+
+      .subheader {
+        font-weight: 200 !important;
+        margin: 7px 0 4px;
+      }
+
+      .amount {
+        font-weight: 400 !important;
+        font-size: 12px !important;
+      }
+
+      .token-rate {
+        margin-top: 7px;
+      }
+    }
+  }
+}
